@@ -10,7 +10,7 @@
 %table#movies
   %thead
     %tr
-      %th#title_header{:class => hilight('title')}
+      %th#title_header{:class => ('hilite' if @sort_by == 'title') }
         = link_to 'Movie Title', movies_path(:sort_by => 'title')
       %th Rating
       %th#release_date_header{:class => ('hilite' if @sort_by == 'release_date') } 

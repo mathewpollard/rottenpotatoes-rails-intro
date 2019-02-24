@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
   helper_method :chosen_rating?
-  helper_method :hilight
 
   def movie_params
     params.require(:movie).permit(:title, :rating, :description, :release_date)
@@ -70,11 +69,4 @@ class MoviesController < ApplicationController
     chosen_ratings.include? rating
   end
 
-  def hilight(column)
-    if(session[:order].to_s == column)
-      return 'hilite'
-    else
-      return nil
-    end
-  end
 end
