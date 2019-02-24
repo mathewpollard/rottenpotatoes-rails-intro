@@ -4,7 +4,7 @@
 %table#movies
   %thead
     %tr
-      %th= link_to "Movie Title", new_movies_path({:order => 'title'}), id: "title_header"
+      %th= link_to "Movie Title", new_movie_path({:order => 'title'}), id: "title_header"
       %th Rating
       %th= link_to "Release Date", new_movie_path, id: "release_date_header"
       %th More Info
