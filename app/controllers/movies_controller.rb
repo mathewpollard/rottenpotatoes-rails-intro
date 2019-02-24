@@ -13,10 +13,8 @@ class MoviesController < ApplicationController
 
   def index
     #@all_ratings = ['G','PG','PG-13','R'] 
-    @all_ratings = Movie.ratings.inject(Hash.new) do |all_ratings, rating|
-          all_ratings[rating] = @ratings.nil? ? false : @ratings.has_key?(rating) 
-          all_ratings
-      end
+    @all_ratings = Movie.ratings
+      
     @sort_by = params[:sort_by]
     session[:ratings] = params[:ratings] unless params[:ratings].nil?
     session[:sort_by] = params[:sort_by] unless params[:sort_by].nil?
