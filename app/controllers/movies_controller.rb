@@ -13,9 +13,9 @@ class MoviesController < ApplicationController
 
   def index
     @all_ratings = ['G','PG','PG-13','R'] 
-    #@movies = Movie.all
-    #@sort_by = params[:sort_by]
-    #@movies = @movies.order(@sort_by)
+    @movies = Movie.all
+    @sort_by = params[:sort_by]
+    @movies = @movies.order(@sort_by)
     session[:ratings] = params[:ratings] unless params[:ratings].nil?
     session[:order] = params[:order_by] unless params[:order_by].nil?
 
