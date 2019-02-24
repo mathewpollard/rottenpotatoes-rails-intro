@@ -44,5 +44,11 @@ class MoviesController < ApplicationController
     flash[:notice] = "Movie '#{@movie.title}' deleted."
     redirect_to movies_path
   end
+  
+  def chosen_rating?(rating)
+    chosen_ratings = session[:ratings]
+    return true if chosen_ratings.nil?
+    chosen_ratings.include? rating
+  end
 
 end
