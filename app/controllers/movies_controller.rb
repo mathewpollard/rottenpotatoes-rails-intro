@@ -31,7 +31,7 @@ class MoviesController < ApplicationController
     elsif !session[:ratings].nil? || !session[:order_by].nil?
       redirect_to movies_path("ratings" => session[:ratings], "order" => session[:order_by])
     else
-      return @movies #= Movie.all
+      return @movies = Movie.all
     end
   end
 
