@@ -18,7 +18,7 @@ class MoviesController < ApplicationController
     session[:sort_by] = params[:sort_by] unless params[:sort_by].nil?
 
     if (params[:ratings].nil? && !session[:ratings].nil?) || (params[:sort_by].nil? && !session[:sort_by].nil?)
-            redirect_to movies_path(:ratings => session[:ratings], :sort_by => session[:sort_by])
+      redirect_to movies_path(:ratings => session[:ratings], :sort_by => session[:sort_by])
     elsif !params[:ratings].nil? || !params[:sort_by].nil?
       if !params[:ratings].nil?
         array_ratings = params[:ratings].keys
